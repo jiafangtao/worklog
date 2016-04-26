@@ -81,3 +81,18 @@ body {
     border-bottom: 0;
   }
 }
+
+li.board {
+  height: 40px;
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 5px;
+}
+
+ul.board {
+  padding-left: 5px;
+  /*border-style: solid;*/
+  /*border-width: 1px;*/
+  /*border-color: grey;*/
+}
