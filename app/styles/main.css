@@ -96,3 +96,11 @@ ul.board {
   /*border-width: 1px;*/
   /*border-color: grey;*/
 }
+
+.centered {
+  margin: 0 auto;
+}
+
+.new-task {
+  width: 100%;
+}
