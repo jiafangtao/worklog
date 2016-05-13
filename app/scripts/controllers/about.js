@@ -8,10 +8,10 @@
  * Controller of the worklogApp
  */
 angular.module('worklogApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
+  .controller('AboutController', ['$scope', function ($scope) {
+    $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

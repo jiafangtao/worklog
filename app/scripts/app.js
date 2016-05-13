@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name worklogApp
- * @description
- * # worklogApp
- *
- * Main module of the application.
- */
 angular
   .module('worklogApp', [
     'ngAnimate',
@@ -21,12 +13,12 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainController',
         controllerAs: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+        controller: 'AboutController',
         controllerAs: 'about'
       })
       .otherwise({

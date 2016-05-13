@@ -83,18 +83,19 @@ body {
 }
 
 li.board {
-  height: 40px;
-  display: block;
-  border-width: 1px;
-  border-style: solid;
-  margin-bottom: 5px;
+  list-style-type: none;
+}
+
+.spacer-top {
+  margin-top: 5px;
+}
+
+#btnAdd {
+  width: 100%;
 }
 
 ul.board {
   padding-left: 5px;
-  /*border-style: solid;*/
-  /*border-width: 1px;*/
-  /*border-color: grey;*/
 }
 
 .centered {
@@ -103,4 +104,21 @@ ul.board {
 
 .new-task {
   width: 100%;
+}
+
+
+.task-done {
+  background-color: #eeeeee;
+}
+
+.task-list {
+  border: 1px solid #eeeeee;
+  height: 34px;
+  margin: 2px auto;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.task-planned:hover {
+  background-color: green;
 }
