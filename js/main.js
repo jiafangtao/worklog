@@ -30,7 +30,9 @@ Timer.prototype.start = function () {
     this.callbacks.onStart ();
   
   var self = this;
-  this._tickHander = setInterval (function () { return self._tick(); }, 1000);
+  //this._tickHander = setInterval (function () { return self._tick(); }, 1000);
+  
+  this._tickHander = setInterval ( this._tick.bind(self), 1000);
 };
 
 Timer.prototype._tick = function () {
