@@ -3,7 +3,8 @@
 angular.module('worklogApp')
   .controller('MainController', ['$scope', function ($scope) {
   	
-  	$scope.text = "bingo!";
+	  $scope.text = "bingo!";
+	  $scope.newTaskText = "";
 
     $scope.tasks = {
     	
@@ -35,5 +36,16 @@ angular.module('worklogApp')
 	    		title: "I have done another one, with a long name"
 	    	}
     	]
-    };
+	};
+	
+	$scope.createNewTask = function () {
+		console.info ("Creating a new task ...");
+		if (this.newTaskText) {
+			var id = this.tasks.planned[this.tasks.planned.length - 1].id + 1;
+			//var timestamp = '';
+			var title = this.newTaskText;
+
+			this.tasks.planned.push({id: id, title: title});
+		}
+	};
   }]);
