@@ -26,11 +26,14 @@
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
+    "jasmine-core": "^3.2.1",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "karma": "^3.0.0",
+    "phantomjs": "^2.1.7"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -39,5 +42,6 @@
     "start": "grunt serve",
     "build": "grunt",
     "test": "grunt test"
-  }
+  },
+  "dependencies": {}
 }
