@@ -23,7 +23,6 @@
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.9.2",
     "grunt-postcss": "^0.5.5",
-    "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
     "jasmine-core": "^3.2.1",
@@ -36,7 +35,7 @@
     "phantomjs": "^2.1.7"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=8.9.1"
   },
   "scripts": {
     "start": "grunt serve",
