@@ -92,13 +92,13 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect.static('test'),
+              serveStatic('.tmp'),
+              serveStatic('test'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                serveStatic('./bower_components')
               ),
-              connect.static(appConfig.app)
+              serveStatic(appConfig.app)
             ];
           }
         }
@@ -134,8 +134,7 @@ module.exports = function (grunt) {
     // Make sure code styles are up to par
     jscs: {
       options: {
-        config: '.jscsrc',
-        verbose: true
+        config: '.jscsrc'
       },
       all: {
         src: [
