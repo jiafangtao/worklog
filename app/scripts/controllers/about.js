@@ -14,4 +14,10 @@ angular.module('worklogApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.contact = {
+      developer: 'Bruce Jia',
+      email: 'jiafangtao@gmail.com',
+      twitter: '@jiafangtao'
+    };
   }]);

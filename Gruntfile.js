@@ -9,6 +9,10 @@
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  var serveStatic = require('serve-static');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -53,16 +57,6 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
-      },
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
       }
     },
 
@@ -79,16 +73,16 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
+              serveStatic('.tmp'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                serveStatic('./bower_components')
               ),
               connect().use(
                 '/app/styles',
-                connect.static('./app/styles')
+                serveStatic('./app/styles')
               ),
-              connect.static(appConfig.app)
+              serveStatic(appConfig.app)
             ];
           }
         }
@@ -415,11 +409,6 @@ module.exports = function (grunt) {
       'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
