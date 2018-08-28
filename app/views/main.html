@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="clock">A counting-down clock</div>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman">
+    <!--img src="images/yeoman.png" alt="I'm Yeoman"-->
   </p>
   <button class="btn btn-primary">Start</button>
   <button class="btn btn-danger">Stop</button>
@@ -17,7 +17,7 @@
 
 </div>
 
-<div class="row marketing">
+<div class="row marketing" ng-keyup="handleKeys($event)">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <h4>PLANNED</h4>
       <div class="task-list task-planned" ng-click="isselected=!isselected" ng-class="isselected ? 'task-selected' : 'task'" ng-repeat="task in tasks.planned">
