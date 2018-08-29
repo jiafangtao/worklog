@@ -2,18 +2,19 @@
 
 ![build status](https://travis-ci.com/jiafangtao/worklog.svg?branch=master)
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+## Why another wheel?
+This is a personal project aiming to log my daily work with GTD (Get Things Done) methodology.
+Similiar tools like trello.com, kanbanflow.com are widely avaiable with free tier offerings.
+So why to invent another wheel? Although those services offer rich functionalities, most of them
+are no use to me. What I need is a pure native web application with some basic features including
+task management, logs, stop watch/pomodora watch, statistics and reports. That's it!
 
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+## How to build, test and run
+- Run `grunt` for building
+- Run `grunt test` for unit testing (with karma)
+- Run `grunt serve` for preview with a web server
 
 
 ### Tech Stack
-ReactJS + Firebase
-
+- `AngularJS` is used as the front end framework
+- The data is stored in `local storage` of the page
