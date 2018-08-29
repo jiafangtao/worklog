@@ -83,7 +83,7 @@ angular.module('worklogApp')
 		}
 	};
 
-	$scope.handleKeys = function (event) {
-		console.log ('event code: ' + event.keyCode);
-	};
+	$scope.$on('keyUp', function (event, args) {
+		console.log ('event args:' + args.event.keyCode);
+	});
   }]);
