@@ -3,7 +3,7 @@
 angular.module('worklogApp')
   .controller('GlobalController', ['$scope', '$rootScope', function ($scope, $rootScope) {
       $scope.keyUp = function (evt) {
-          console.log ("[global] key up");
+          console.log ('[global] key up');
           $rootScope.$broadcast('keyUp', {event: evt});
       };
 
