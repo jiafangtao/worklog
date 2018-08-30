@@ -16,7 +16,7 @@ angular.module('worklogApp')
 	    	{
 	    		id: 2,
 				title: 'task 2',
-				sekected: false
+				selected: false
 	    	},
 	    	{
 	    		id: 3,
@@ -45,45 +45,52 @@ angular.module('worklogApp')
 	
 	$scope.createNewTask = function () {
 		console.info ('Creating a new task ...');
-		if (this.newTaskText) {
-			var id = this.tasks.planned[this.tasks.planned.length - 1].id + 1;
+		if ($scope.newTaskText) {
+			//TODO: fix the bug here - it doesn't work if there are no planned tasks
+			var id = $scope.tasks.planned[$scope.tasks.planned.length - 1].id + 1;
 			//var timestamp = '';
-			var title = this.newTaskText;
+			var title = $scope.newTaskText;
 
-			this.tasks.planned.push({id: id, title: title});
+			$scope.tasks.planned.push({id: id, title: title});
 		}
 	};
 
-	//TODO: rewrite this ugly code with underscore or alike
 	$scope.toggleSelect = function (tid) {
-		var idx = 0;
-		while (idx < this.tasks.planned.length) {
-			if (tid === this.tasks.planned[idx].id) {
-				this.tasks.planned[idx].selected = !this.tasks.planned[idx].selected;
-				break;
-			}
 
-			idx++;
-		}
+		$scope.tasks.planned.forEach (function(task, key) {
+			if (task.id === tid)
+			    task.selected = !task.selected;
+		});
 
-		if (idx === this.tasks.planned.length) {
-			idx = 0;
-			while (idx < this.tasks.done.length) {
-				if (tid === this.tasks.done[idx].id) {
-					this.tasks.done[idx].selected = !this.tasks.done[idx].selected;
-					break;
-				}
-
-				idx++;
-			}
-		}
-
-		if (idx === this.tasks.done.length) {
-			console.warn ('No task was found with id - ' + tid);
-		}
+		$scope.tasks.done.forEach(function(task, value) {
+			if (task.id === tid)
+				task.selected = !task.selected;
+		});
 	};
 
 	$scope.$on('keyUp', function (event, args) {
 		console.log ('event args:' + args.event.keyCode);
+		if (args.event.keyCode === 68) {
+			// 'd' is pressed
+			console.log('"d" is pressed');
+			$scope.deleteSelectedTasks();
+		}
 	});
+
+	$scope.deleteSelectedTasks = function () {
+
+		var removeTask = function (tasks, match) {
+			for (var i = tasks.length; i>=0; i--) {
+				var task = tasks[i];
+				if (task && match(task)) {
+					console.log('Going to remove task - ' + task.title + '(' + task.id + ')');
+					tasks.splice(i, 1);
+				}
+			}
+		};
+
+		[$scope.tasks.planned, $scope.tasks.done].forEach(function(tasks) {
+			removeTask (tasks, function(task) { return task.selected == true; });
+		});
+	};
   }]);

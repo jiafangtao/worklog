@@ -8,7 +8,7 @@ angular.module('worklogApp')
       };
 
       $scope.keyDown = function (evt) {
-          console.log("[global] key down");
+          console.log('[global] key down');
           $rootScope.$broadcast('keyDown', {event: evt});
       };
   }]
