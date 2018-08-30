@@ -57,14 +57,16 @@ angular.module('worklogApp')
 
 	$scope.toggleSelect = function (tid) {
 
-		$scope.tasks.planned.forEach (function(task, key) {
-			if (task.id === tid)
-			    task.selected = !task.selected;
+		$scope.tasks.planned.forEach (function(task) {
+			if (task.id === tid) {
+				task.selected = !task.selected;
+			}
 		});
 
-		$scope.tasks.done.forEach(function(task, value) {
-			if (task.id === tid)
+		$scope.tasks.done.forEach(function(task) {
+			if (task.id === tid) {
 				task.selected = !task.selected;
+			}
 		});
 	};
 
@@ -90,7 +92,7 @@ angular.module('worklogApp')
 		};
 
 		[$scope.tasks.planned, $scope.tasks.done].forEach(function(tasks) {
-			removeTask (tasks, function(task) { return task.selected == true; });
+			removeTask (tasks, function(task) { return task.selected === true; });
 		});
 	};
   }]);
