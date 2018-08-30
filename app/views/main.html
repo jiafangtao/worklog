@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="clock">A counting-down clock</div>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman">
+    <!--img src="images/yeoman.png" alt="I'm Yeoman"-->
   </p>
   <button class="btn btn-primary">Start</button>
   <button class="btn btn-danger">Stop</button>
@@ -20,16 +20,15 @@
 <div class="row marketing">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <h4>PLANNED</h4>
-      <div class="task-list task-planned" ng-repeat="task in tasks.planned">
+      <div class="task-list task-planned" ng-click="toggleSelect(task.id)" ng-class="task.selected ? 'task-selected' : 'task'" ng-repeat="task in tasks.planned">
         <span data-task-id="{{task.id}}">{{task.title}}</span>
       </div>
   </div>
 
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <h4>DONE</h4>
-      <div class="task-list task-done" ng-repeat="task in tasks.done">
+      <div class="task-list task-done" ng-click="toggleSelect(task.id)" ng-class="task.selected ? 'task-selected' : 'task'" ng-repeat="task in tasks.done">
         <span data-task-id="{{task.id}}">{{task.title}}</span>
       </div>
   </div>
 </div>
-

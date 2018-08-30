@@ -122,3 +122,7 @@ ul.board {
 .task-planned:hover {
   background-color: green;
 }
+
+.task-selected {
+  background-color: yellow;
+}
