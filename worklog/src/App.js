@@ -1,7 +1,31 @@
 import './App.css';
-import addItem from './Item.js';
 
-function App() {
+function ItemList({data}) {
+  var items = data.map((item) =>
+    <li key={item.id} id={item.id} value={item.value} status="loaded">{item.value}</li>
+  );
+
+  return (
+    <ul>
+      {items}
+    </ul>
+  );
+}
+
+// The below doesn't compile.
+/*
+function ItemList2({data}) {
+  return (
+    <ul>
+      data.map((item) =>
+      <li key={item.id} id={item.id} value={item.value} status="loaded">{item.value}</li>
+      );
+    </ul>
+  );
+}
+*/
+
+function App({items}) {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,8 +36,10 @@ function App() {
       </header>
 
       <div className="List">
-        <input className="ListButton" type="button" value="Add" onClick={addItem}/>
+        <input className="ListButton" type="button" value="Add" />
       </div>
+
+      <ItemList data={items} />
     </div>
   );
 }

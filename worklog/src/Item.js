@@ -7,8 +7,5 @@ function Item() {
   );
 }
 
-function addItem() {
-  console.log("Going to add an item ...");
-}
 
-export default { Item, addItem };
+export default { Item };
