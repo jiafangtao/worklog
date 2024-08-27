@@ -1,20 +1,31 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+import Tasks from './components/Tasks.vue';
+import DailyStat from './components/DailyStat.vue';
+import WeeklyStat from './components/WeeklyStat.vue';
+import MonthlyStat from './components/MonthlyStat.vue';
+import Clock from './components/Clock.vue';
+import Navbar from './components/Navbar.vue';
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <Navbar />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <Tasks />
     </div>
+    <div class="wrapper">
+      <Clock />
+    </div>
+    <div>
+      <DailyStat />
+      <WeeklyStat />
+      <MonthlyStat />
+    </div>
+    
   </header>
 
   <RouterView />

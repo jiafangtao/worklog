@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>Worklog App - tracking your daily work logs</h1>
   </div>
 </template>
 
