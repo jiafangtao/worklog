@@ -13,7 +13,10 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "docker:package": "vite build && docker build -t worklog-vue:latest .",
+    "docker:run": "docker run -it -d --rm --name worklog -p 9000:80 worklog-vue:latest",
+    "docker:stop": "docker stop worklog && echo done"
   },
   "dependencies": {
     "pinia": "^2.1.7",
