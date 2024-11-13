@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worklog-deployment
+  labels:
+    app: worklog-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: worklog-app
+  template:
+    metadata:
+      labels:
+        app: worklog-app
+    spec:
+      containers:
+        - name: worklog-container
+          image: brucejia/worklog:vue.latest
+          ports:
+            - containerPort: 80
