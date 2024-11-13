@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 
-import Tasks from './components/Tasks.vue';
-import DailyStat from './components/DailyStat.vue';
-import WeeklyStat from './components/WeeklyStat.vue';
-import MonthlyStat from './components/MonthlyStat.vue';
-import Clock from './components/Clock.vue';
-import Navbar from './components/Navbar.vue';
-
+import Tasks from './components/Tasks.vue'
+import DailyStat from './components/DailyStat.vue'
+import WeeklyStat from './components/WeeklyStat.vue'
+import MonthlyStat from './components/MonthlyStat.vue'
+import Clock from './components/Clock.vue'
+import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
@@ -25,7 +24,6 @@ import Navbar from './components/Navbar.vue';
       <WeeklyStat />
       <MonthlyStat />
     </div>
-    
   </header>
 
   <RouterView />
